@@ -1,0 +1,25 @@
+<h1>resultados</h1>
+<table>
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>nombre</td>
+      <td>apellido</td>
+      <td>cedula</td>
+      <td>rol</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% result.forEach((i)=>{%>
+    <tr>
+      <td><%= i.id %></td>
+      <td><%= i.nombre %></td>
+      <td><%= i.apellido %></td>
+      <td><%= i.cedula %></td>
+      <td><%= i.rol %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<a href="/">añadir</a>
