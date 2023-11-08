@@ -17,6 +17,8 @@
       <td><%= i.apellido %></td>
       <td><%= i.cedula %></td>
       <td><%= i.rol %></td>
+      <td><a href="/edit/<%= i.id %>">editar</a></td>
+      <td><a href="/delete/<%= i.id %>">eliminar</a></td>
     </tr>
     <% }) %>
   </tbody>

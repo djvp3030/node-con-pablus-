@@ -1,0 +1,23 @@
+<h1>Apartado de editar</h1>
+
+<%if (user) {%>
+<div>
+  <form action="/update" method="POST">
+    <input id='id' name="id" value="<%= user.id %>" hidden>
+    <label for="">nombre</label>
+    <input type="text" name="nombre" id="nombre" value="<%= user.nombre%>"/>
+    </label><label for="">apellido</label>
+    <input type="text" name="apellido" id="apellido" value="<%= user.apellido%>"/>
+    </label><label for="">cedula</label>
+    <input type="text" name="cedula" id="cedula" value="<%= user.cedula
+    %>"/>
+    <select name="rol" id="rol">
+      <option <%= user.rol =='admin' ? 'selected' : "" %>  value="admin" >admin</option>
+      <option <%= user.rol =='cliente' ? 'selected' : "" %> value="cliente" >cliente</option>
+    </select>
+    <button type="submit">enviar</button>
+  </form> 
+</div>
+<%}%>
+
+<a href="/resultados">resultados</a>

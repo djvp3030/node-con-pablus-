@@ -13,9 +13,16 @@ rutas.get("/formulario", (req, res) => {
   });
 });
 
-// rutas.get("/", (req, res) => {
-//   res.render("principal");
-// });
+rutas.get("/edit/:id", (req, res) => {
+  const id = req.params.id;
+  conexion.query("select * from users where id = ?", [id], (error, result) => {
+    if (error) {
+      console.error(error);
+    } else {
+      res.render("edit", { user: result[0] });
+    }
+  });
+});
 
 rutas.get("/", (req, res) => {
   res.render("añadir");
@@ -32,5 +39,8 @@ rutas.get("/resultados", (req, res) => {
 });
 
 const crud = require("./controllers/crud");
+
 rutas.post("/save", crud.save);
+rutas.post("/update", crud.update);
+
 module.exports = rutas;
